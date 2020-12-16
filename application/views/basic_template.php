@@ -7,9 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> 
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css');?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/loginFrame.css')?>">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
     <script src="https://kit.fontawesome.com/8d774a68be.js" crossorigin="anonymous"></script>
+    <script>
+      function login(){
+        document.getElementById("loginFrame").style.display = "inline";
+      }
+      function closeLogin(){
+        document.getElementById("loginFrame").style.display = "none";
+      }
+      
+    </script>
 
     
      
@@ -52,9 +62,19 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
+      <?php $session = $this->session->userdata('id_user');
+        if(!empty($session)){
+          echo '<li class="nav-item">
+                  <a class="nav-link " href="'.base_url('logout').'" tabindex="-1" >Logout</a>
+                </li>';
+        }
+        else{
+          echo '<li class="nav-item">
+                  <a class="nav-link " onclick="login()" style="cursor:pointer" tabindex="-1" >Login</a>
+                </li>';
+        } 
+
+      ?>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -63,11 +83,11 @@
   </div>
 </nav>
 
-    
-    
-
-
-
+<div class="loginFrame" id="loginFrame" style="display:none" onclick="closeLogin()">
+  <div class="loginFrameFrame">
+    <iframe class="loginFrameContent"  src="<?php echo base_url('login')?>" frameborder="0"></iframe>
+  </div>
+</div>
 
 
 

@@ -10,7 +10,7 @@
                 $result = $this->Login_model->check_user($_POST);
             if(!empty($result)){
                 $data = array(
-                'id_user' => $result->ID,
+                'id_user' => $result->Id,
                 'username' => $result->User
                 );
             $this->session->set_userdata($data);

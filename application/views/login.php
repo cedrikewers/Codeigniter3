@@ -1,26 +1,41 @@
-<?php if(isset($_SESSION)) {
-    echo $this->session->flashdata('flash_data');
-} ?>
-<div class="row">
-    <div id="form" class="collapse">
+<head>
+<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>  
+<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css');?>">
+
+</head>
+    
+<body>
+    
+<script>
+
+    
+
+</script>
+
+
+
+
+    <div id="form" style="width: 80%; margin: auto;">
         <form action="<?php site_url('login') ?>" method="post" class="form-horizontal">
-            <div class="form-group">
-            <label class="col-sm-1 control-label">Username:</label>
-                <div class="col-sm-11">
+            <div class="mb-3">
+            <label class="form-label">Username:</label>
                 <input type="text" class="form-control" name="username" />
-                </div>
             </div>
-            <div class="form-group">
-            <label class="col-sm-1 control-label">Password:</label>
-                <div class="col-sm-11">
+            <div class="mb-3">
+            <label class="form-label">Password:</label>
                 <input type="text" class="form-control" name="password" />
-                </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-1 col-sm-12">
-                <button type="submit" type="button" class="btn btn-default">Login</button>
-                </div>
+            <div class="mb-3">
+            <div class="form-text" >
+            <?php if(isset($_SESSION)) {
+                echo $this->session->flashdata('flash_data');
+            } ?>
+            </div>
+            </div>
+            <div class="mb-3">
+                <button onclick="parent.window.location.reload()" type="submit" type="button" class="btn btn-primary">Login</button>
             </div>
         </form>
     </div>
-</div>
+
+</body>  

@@ -54,24 +54,28 @@
  
 <?php 
 
-$session = $this->session->userdata('id_user');
-if(!empty($session)){
+
+
+foreach($content as $data_item){
+
+  $session = $this->session->userdata('id_user');
+  if(!empty($session)){
   $is_admin = '<div class="deleteEntry float-right" style="cursor: pointer; " data-id='.$data_item['id'].'>
                   <i class="fas fa-trash" style="margin-top: 5px"></i>
               </div>
               <div class="updateEntry float-right" style="cursor: pointer; " data-id='.$data_item['id'].'>
                 <i class="fas fa-edit" style="margin-top:5px; margin-right: 5px"></i>
               </div>';
-}
-else{
-  $is_admin = "";
-}
+  }
+  else{
+    $is_admin = "";
+  }
 
-foreach($content as $data_item){
+  
     echo '
       <div class="col-sm-3" id="entry'.$data_item['id'].'">
         <div class="card border-dark mb-3" style="max-width: 18rem;">
-          <div class="card-header" data-name='.$data_item['name'].'>'.$data_item['name'].' 
+          <div class="card-header" data-name='.$data_item['name'].'>'.$data_item['name'].$is_admin.'
             
           </div>
           <div class="card-body text-dark">
