@@ -2,7 +2,6 @@
     $(document).ready(function(e){
     
         
-
     $("#submit").click(function(){
       if($("#updateid").val()!=""){
         var func = "<?php echo site_url("db/update"); ?>";
