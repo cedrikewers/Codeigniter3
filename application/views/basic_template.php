@@ -95,7 +95,7 @@
 
 <?php
 
-    
+
     echo $content;
 
 

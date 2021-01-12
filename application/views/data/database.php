@@ -52,7 +52,7 @@
 
  
 <?php 
-
+echo $breadcrumb_bootstrap_style;
 
 
 foreach($content as $data_item){
