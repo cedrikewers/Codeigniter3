@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'sqlite:Z:\Codeigniter3\assets\db\db.db',
+	'hostname' => 'sqlite:D:\Codeigniter3\assets\db\db.db',
 	'username' => '',
 	'password' => '',
 	'database' => '',
